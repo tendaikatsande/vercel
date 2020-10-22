@@ -1,8 +1,8 @@
 <div class="container">
     <div class="profile">
 
-        <div class="profile-avatar">
-            <img src="../../assets/img/avatar.png" alt="">
+        <div class="profile-avatar animate__animated animate__flip animate__infinite ">
+            <img class="animated flip infinite" src="../../assets/img/avatar.png" alt="">
         </div>
         <div class="profile-content">
             <div class="profile-title">
@@ -14,13 +14,16 @@
         </div>
 
         <div class="profile-actions">
-            <div class="profile-action-btn">My Resume</div>
-            <div class="profile-action-btn">Projects</div>
-            <div class="profile-action-btn">Articles</div>
+            <div class="profile-action-btn" (click)="view ='resume'">My Resume</div>
+            <div class="profile-action-btn" (click)="view ='projects'">Projects</div>
+            <div class="profile-action-btn" (click)="view ='blog'">Articles</div>
         </div>
+
 
     </div>
     <div>
-
+        <app-projects [hidden]="view!=='projects'"></app-projects>
+        <app-blog [hidden]="view!=='blog'"></app-blog>
+        <app-resume [hidden]="view!=='resume'"></app-resume>
     </div>
 </div>
